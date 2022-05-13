@@ -1,3 +1,48 @@
-# Faster-RCNN-YOLO-V3
-First, download the project file of Yolo and transfer it to Darknet. weights file is converted to keras .h5 file, open the path of the project file in CMD, and run convert.py and tell "input path of .weights" and "output path of .h5". Second, download the VOC data set and place it in the VOCdevkit file directory. Third, modify voc_annotation.py, change the contents of the classes into the objects to be trained. Fourth, modify coco_classes.txt and voc_classes.txt, change the object inside to the name of the object to be trained, and then execute train.py for training. Finally, the new weight file obtained from training is used for verification. Input: Python Yolo_ video. py --image. 
-   Since the model has been trained, you can directly enter the command: python yolo_video.py --image. Finally, enter the image path to be verified.
+# Pytorch-cifar100
+
+practice on cifar100 using pytorch
+
+## Requirements
+
+#experiment enviroument
+- python3.9
+- pytorch1.7.1+cu101
+- tensorboard 2.2.2(optional)
+
+
+## Usage
+
+### 1. enter directory
+```bash
+cd pytorch-cifar100
+```
+
+### 3. run tensorbard(optional)
+Install tensorboard
+pip install tensorboard
+mkdir runs
+Run tensorboard
+tensorboard --logdir runs --port 6006 --host localhost
+
+
+### 4. train the model
+You need to specify the net you want to train using arg -net
+
+```bash
+# use gpu to train vgg16
+python train.py -net resnet18 -gpu
+```
+
+sometimes, you might want to use warmup training by set ```-warm``` to 1 or 2, to prevent network
+diverge during early training phase.
+
+
+### 5. test the model
+Test the model using test.py
+```bash
+python test.py -net resnet18 -weights
+checkpoint\resnet18\Friday_April_2022_09h_oom_53s\resnet18-20-regular.ph
+```
+
+#6.learning rate
+python lr_finder.py
