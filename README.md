@@ -98,7 +98,16 @@ If you want to use original pretrained weights for YOLOv3:
 
 7. For speeding up the training process with frozen layers train_bottleneck.py can be used. It will compute the bottleneck features of the frozen model first and then only trains the last layers. This makes training on CPU possible in a reasonable time. See [this](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) for more information on bottleneck features.
 
-#Resnet8
+
+
+
+
+
+
+
+# 训练Resnet8
+
+
 # Pytorch-cifar100
 
 practice on cifar100 using pytorch
@@ -150,7 +159,16 @@ python lr_finder.py
 
 
 
-#对比Cutmix，Cutout，mixup的性能
+
+
+
+
+
+
+
+
+# 对比Cutout, cutmix, mixup性能
+
 一：以Resnet18为baseline，对比cutmix, cutout, mixup的性能
 
 conf/gloabal_settings.py中设置了一些参数。
